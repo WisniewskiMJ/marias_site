@@ -1,0 +1,187 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/*
+BODY
+*/
+
+body {
+  height: 100vh;
+  background: lightgray;
+  color: black;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*
+HERO
+*/
+
+.hero {
+  background-image: url("../images/feelt.jpg");
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  margin-top: -30vh;
+}
+
+.slogan {
+  position: relative;
+  line-height: 3rem;
+  top: 55vh;
+  left: 20vw;
+  height: 20vh;
+  width: 20vw;
+  color: transparent;
+  text-shadow: 0 0 4px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan h1 {
+  font-size: 96px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.slogan h3 {
+  font-size: 48px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.tilt1 {
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.tilt2 {
+  transform: rotate(1deg);
+  transform-origin: left;
+  margin-left: 60%;
+  margin-top: 3%;
+}
+
+.tilt3 {
+  transform: rotate(-7deg);
+  transform-origin: left;
+  margin-left: 30%;
+  margin-top: -3%;
+}
+
+.tilt4 {
+  transform: rotate(5deg);
+  transform-origin: left;
+  margin-left: 55%;
+  margin-top: -7%;
+}
+
+.construction {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 2rem;
+  display: inline-block;
+  color: transparent;
+  text-shadow: 0 0 3px black;
+  position: relative;
+  top: 60vh;
+  left: 60vw;
+}
+
+/*
+HEADER/NAVI
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0));
+  height: 30vh;
+  padding: 0 5vw;
+}
+
+.logo {
+  margin-top: 1rem;
+}
+
+nav {
+  height: 100%;
+}
+
+.navi-list {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: front;
+  margin-right: 5vw;
+}
+
+.navi-list li {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 3rem;
+  padding: 0.5em;
+  color: transparent;
+  text-shadow: 0 0 2px black;
+}
