@@ -73,7 +73,7 @@ HERO
   background-size: cover;
   background-position: bottom;
   height: 100vh;
-  margin-top: -30vh;
+  /* margin-top: -30vh; */
   padding: 5%;
   display: grid;
   grid-template-rows: 3fr 2fr;
@@ -151,9 +151,15 @@ HERO
 HEADER/NAVI
 */
 
+nav a {
+  color: transparent;
+  text-decoration: none;
+}
+
 .navi-desktop {
   display: none;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -161,10 +167,11 @@ HEADER/NAVI
 }
 
 .sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
   background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   height: 30vh;
+  width: 100%;
   padding: 0 3vw;
 }
 
@@ -178,17 +185,179 @@ HEADER/NAVI
   max-height: 100%;
 }
 
-.footer {
+.navi-mobile-list {
+  position: fixed;
+  background-color: rgba(255, 255, 255, .8);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transform: translate(100%);
+  transition: transform 400ms ease;
+}
+
+.navi-mobile ul {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 4rem 0;
+}
+
+.navi-mobile ul li {
+  font-size: 36px;
+  font-weight: 400;
+  padding: 2rem 1rem;
+  color: transparent;
+  text-shadow: 0 0 2px black;
+}
+
+/*
+hamburger
+*/
+
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 13px;
+  z-index: 110;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.hamburger-background {
+    position: absolute;
+    top: 3px;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+}
+
+.hamburger {
+    position: relative;
+    height: 8px;
+    width: 40px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    margin: -4px 0 0 -20px;
+    transition: transform 400ms ease;
+    z-index: 101;
+    filter: blur(.5px);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    top: -15px;
+}
+
+.hamburger::after {
+    top: 15px;
+}
+
+.toggle:checked + .hamburger-background .hamburger {
+    transform: rotate(-135deg);
+}
+
+.toggle:checked + .hamburger-background .hamburger::before,
+.toggle:checked + .hamburger-background .hamburger::after {
+    top: 0;
+    transform: rotate(-90deg);
+}
+
+.toggle:checked + .hamburger-background + .navi-mobile-list {
+    transform: translate(0);
+}
+
+/*
+CONTACT
+*/
+
+.contact {
+  height: 90vh;
+  display: grid;
+  grid-template: 2fr 2fr 8fr 1fr / 1fr 6fr 1fr;
+  grid-template-areas:
+    ". . ."
+    ". text ."
+    ". form ."
+    ". . ."  ;
+}
+
+.textblock {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textblock p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.userdata {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userdata-field,
+.message-field {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px lightgray;
+  padding: .5rem;
+}
+
+.contact .button {
+  background-color: transparent;
+  border-style: none;
+  border-radius: 15px;
+  box-shadow: 0 0 15px lightgray;
+  padding: .7rem;
+  margin: 1rem 30%;
+}
+
+.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
   font-size: 12px;
 }
 
 .footer p {
+  font-size: 10px;
   padding: 2% 5%;
 }
 
 @media only screen and (orientation:landscape) and (max-width: 900px) {
+
+  .navi-mobile ul {
+    margin: 0;
+  }
+
+  .navi-mobile ul li {
+    padding: 1rem 1rem;
+  }
 
   .hero {
     padding: 5%;
@@ -222,6 +391,26 @@ HEADER/NAVI
 
 @media only screen and (orientation: portrait) and (min-width: 600px) {
 
+  .toggle {
+    right: 0;
+    width: 70px;
+    height: 70px;
+  }
+
+  .hamburger-background {
+      right: 3px;
+      width: 70px;
+      height: 70px;
+  }
+
+  .hamburger {
+      height: 10px;
+      width: 50px;
+      margin: -5px 0 0 -25px;
+      z-index: 101;
+  }
+
+
   .slogan h1 {
     font-size: 96px;
     text-shadow: 0 0 4px black;
@@ -237,8 +426,17 @@ HEADER/NAVI
     text-shadow: 0 0 3px black;
   }
 
+  .form {
+    width: 70%;
+    margin: auto;
+    padding: 1rem 0;
+  }
 
-
+  .userdata-field,
+  .message-field {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
 
 }
 
@@ -272,11 +470,13 @@ HEADER/NAVI
   }
 
   .hero  {
-    grid-template: 3fr 1fr 1fr / 1fr 1fr 3fr;
+    padding: 0;
+    grid-template: 6fr 1fr 1fr 2fr / 1fr 1fr 3fr;
     grid-template-areas:
       ". . ."
       ". slogan ."
       ". . construction"
+      "gradient gradient gradient"
   }
 
   .slogan {
@@ -302,6 +502,11 @@ HEADER/NAVI
     text-shadow: 0 0 3px black;
   }
 
+  .gradient {
+    /* grid-area: gradient; */
+    /* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); */
+  }
+
 
   .tilt2 {
     margin-left: 60%;
@@ -323,6 +528,15 @@ HEADER/NAVI
     justify-self: center;
   }
 
+  .form {
+    width: 60%;
+    margin: auto;
+    padding: 1rem 0;
+  }
 
-
+  .userdata-field,
+  .message-field {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
 }

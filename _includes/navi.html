@@ -1,6 +1,13 @@
 <nav>
   <div class="navi-mobile">
-    {% include navi_list.html %}
+    <input type="checkbox" class="toggle">
+    <div class="hamburger-background">
+        <div class="hamburger">
+        </div>
+    </div>
+    <div class="navi-mobile-list">
+      {% include navi_list.html %}
+    </div>
   </div>
   <div class="navi-desktop">
     {% include navi_list.html %}
