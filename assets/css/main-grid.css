@@ -163,7 +163,6 @@ nav a {
 .header {
   display: flex;
   justify-content: space-between;
-  z-index: 100;
 }
 
 .sticky {
@@ -173,6 +172,7 @@ nav a {
   height: 30vh;
   width: 100%;
   padding: 0 3vw;
+  z-index: 100;
 }
 
 .logo {
