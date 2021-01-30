@@ -168,6 +168,7 @@ nav a {
 .sticky {
   position: fixed;
   top: 0;
+  background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0));
   background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   height: 30vh;
   width: 100%;
