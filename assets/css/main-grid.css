@@ -382,9 +382,45 @@ CONTACT
   }
 
   .logo {
-
-    max-height: 15vh;
+    max-height: 12vh;
   }
+
+  .contact {
+    height: 95vh;
+    grid-template: 3fr 1fr 8fr 1fr / 1fr 6fr 1fr;
+    grid-template-areas:
+      ". . ."
+      ". text ."
+      ". form ."
+      ". . ."  ;
+  }
+
+  .textblock p {
+    padding: 1rem 0;
+  }
+
+  .userdata-field,
+  .message-field {
+    margin-bottom: .5rem;
+  }
+
+  .message-field {
+    height: 20vh;
+  }
+
+  .contact .button {
+    padding: .5rem;
+    margin: .5rem 30%;
+  }
+
+  .footer {
+    height: 5vh;
+  }
+
+  .footer p {
+    padding: 0;
+  }
+
 }
 
 
