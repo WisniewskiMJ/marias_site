@@ -353,11 +353,13 @@ CONTACT
 
   .navi-mobile ul {
     margin: 0;
+    justify-content: center;
   }
 
   .navi-mobile ul li {
     padding: 1rem 1rem;
   }
+
 
   .hero {
     padding: 5%;
