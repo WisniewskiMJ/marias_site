@@ -55,6 +55,14 @@ table {
   box-sizing: border-box;
 }
 
+
+
+
+
+
+
+
+
 /*
 BODY
 */
@@ -73,7 +81,6 @@ HERO
   background-size: cover;
   background-position: bottom;
   height: 100vh;
-  /* margin-top: -30vh; */
   padding: 5%;
   display: grid;
   grid-template-rows: 3fr 2fr;
@@ -170,7 +177,7 @@ nav a {
   top: 0;
   background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0));
   background-image: linear-gradient(white, rgba(255, 255, 255, 0));
-  height: 30vh;
+  height: 20vh;
   width: 100%;
   padding: 0 3vw;
   z-index: 100;
@@ -278,6 +285,44 @@ hamburger
     transform: translate(0);
 }
 
+
+/* 
+ABOUT
+*/
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 9vh;
+  line-height: 1.2rem;
+}
+
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.imgblock {
+  max-width: 80vw;
+  align-self: center;
+}
+
+.imgblock img {
+  width: 100%;
+  box-shadow: 4px 4px 12px rgb(77, 77, 77);
+  object-fit: cover;
+}
+
+.text-block {
+  max-width: 80vw;
+  padding: 1rem 0;
+  align-self: center;
+}
+
+
 /*
 CONTACT
 */
@@ -299,11 +344,13 @@ CONTACT
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .textblock p {
   font-size: 16px;
   text-align: center;
+  padding: .5rem 0;
 }
 
 .form {
@@ -350,7 +397,49 @@ CONTACT
   padding: 2% 5%;
 }
 
+
+
+
+
+
+
+
+
 @media only screen and (orientation:landscape) and (max-width: 900px) {
+
+ /*
+HERO phone_landscape
+*/
+
+.hero {
+  padding: 5%;
+  grid-template-rows: 4fr 2fr;
+  grid-template-areas:
+    "slogan"
+    "construction"
+}
+
+.slogan {
+  line-height: .5rem;
+  justify-self: center;
+  align-self: end;
+}
+
+.construction {
+  margin: 0;
+  line-height: 1rem;
+  font-size: 18px;
+  align-self: end;
+  justify-self: end;
+}
+
+  /*
+  HEADER/NAVI phone_landscape
+  */
+
+  .sticky {
+    height: 30vh;
+  }
 
   .navi-mobile ul {
     margin: 0;
@@ -361,32 +450,56 @@ CONTACT
     padding: 1rem 1rem;
   }
 
-
-  .hero {
-    padding: 5%;
-    grid-template-rows: 4fr 2fr;
-    grid-template-areas:
-      "slogan"
-      "construction"
-  }
-
-  .slogan {
-    line-height: .5rem;
-    justify-self: center;
-    align-self: end;
-  }
-
-  .construction {
-    margin: 0;
-    line-height: 1rem;
-    font-size: 18px;
-    align-self: end;
-    justify-self: end;
-  }
-
   .logo {
     max-height: 12vh;
   }
+
+
+  /*
+  ABOUT phone_landscape
+  */
+
+
+
+
+  .about {
+    min-height: 100vh;
+    padding-top: 14vh;
+    line-height: 1.5rem;
+  }
+  
+  .about-section {
+    max-height: 86vh;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .odd {
+    flex-direction: row-reverse;
+  }
+  
+  .imgblock {
+    display: flex;
+    max-height: 80vh;
+  }
+  
+  .imgblock img {
+    max-height: 100%;
+    width: 70%;
+    margin: auto;
+  }
+  
+  
+  .text-block {
+    max-width: 50vw;
+    padding: .5rem 3rem;
+    align-self: start;
+  }
+
+  /*
+  CONTACT phone_landscape
+  */
 
   .contact {
     height: 95vh;
@@ -396,10 +509,6 @@ CONTACT
       ". text ."
       ". form ."
       ". . ."  ;
-  }
-
-  .textblock p {
-    padding: 1rem 0;
   }
 
   .userdata-field,
@@ -425,6 +534,12 @@ CONTACT
   }
 
 }
+
+
+
+
+
+
 
 
 
@@ -478,6 +593,14 @@ CONTACT
   }
 
 }
+
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 900px) {}
 
